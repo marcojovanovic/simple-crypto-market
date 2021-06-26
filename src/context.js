@@ -63,6 +63,8 @@ const CryptoProvider = ({ children }) => {
     image: '',
   });
 
+  // RANDOM USER ON CLICK BUTTON
+
   useEffect(() => {
     getRandomUserImage();
   }, []);

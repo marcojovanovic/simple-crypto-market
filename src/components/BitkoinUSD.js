@@ -48,8 +48,6 @@ function BitkoinUSD() {
           let volume = Number(responder[7].toFixed(2));
           let lastPrice = Number(responder[6].toFixed(2));
 
-          //console.log(responder);
-
           setBitkoinUSD({
             dailyChange: dailyChange,
             volume: volume,

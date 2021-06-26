@@ -7,9 +7,11 @@ import { CryptoContext } from '../context';
 function EhtereumEUR() {
   const { ethereumEUR, setEthereumEUR } = React.useContext(CryptoContext);
 
-  // btc usd
+  // OPEN CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
+
+  // SEND MESSAGES
 
   wss.onopen = () => {
     wss.send(
@@ -21,6 +23,8 @@ function EhtereumEUR() {
       })
     );
   };
+
+// WEBSOCKETS GET MESSAGES AND SETSTATE
 
   wss.onmessage = (msg) => {
     let res = JSON.parse(msg.data);
@@ -56,7 +60,7 @@ function EhtereumEUR() {
     }
   };
 
-  // Material UI
+  // MATERIAL UI
 
   const StyledTableCell = withStyles((theme) => ({
     head: {

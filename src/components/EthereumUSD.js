@@ -7,9 +7,12 @@ import { CryptoContext } from '../context';
 function EthereumUSD() {
   const { ethereumUSD, setEthereumUSD } = React.useContext(CryptoContext);
 
-  // btc usd
+  // OPEN WEBSOCKET CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
+
+
+  // WEBSOCKET SEND MESSAGES
 
   wss.onopen = () => {
     wss.send(
@@ -21,6 +24,8 @@ function EthereumUSD() {
       })
     );
   };
+
+  // WEBSOCKETS GET MESSAGES AND SETSTATE
 
   wss.onmessage = (msg) => {
     let res = JSON.parse(msg.data);

@@ -7,7 +7,11 @@ import { CryptoContext } from '../context';
 function BitkoinEUR() {
   const { bitkoinEUR, setBitkoinEUR } = React.useContext(CryptoContext);
 
+  // OPEN WEBSOCKET CONNECTION
+
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
+
+  // WEBSOCKET SEND MESSAGES
 
   wss.onopen = () => {
     wss.send(
@@ -19,6 +23,8 @@ function BitkoinEUR() {
       })
     );
   };
+
+  // WEBSOCKETS GET MESSAGES AND SETSTATE
 
   wss.onmessage = (msg) => {
     const inputDetails = {

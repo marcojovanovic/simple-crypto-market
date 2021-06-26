@@ -7,9 +7,12 @@ import { CryptoContext } from '../context';
 function EosUSD() {
   const { eosUSD, setEosUSD } = React.useContext(CryptoContext);
 
-  // btc usd
+  // OPEN CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
+
+
+  // SEND MESSAGES
 
   wss.onopen = () => {
     wss.send(
@@ -21,6 +24,8 @@ function EosUSD() {
       })
     );
   };
+
+  // WEBSOCKETS GET MESSAGES AND SETSTATE
 
   wss.onmessage = (msg) => {
     const inputDetails = {
@@ -43,8 +48,6 @@ function EosUSD() {
           let volume = Number(responder[7].toFixed(2));
           let lastPrice = Number(responder[6].toFixed(2));
 
-          //console.log(responder);
-
           setEosUSD({
             dailyChange: dailyChange,
             volume: volume,
@@ -56,7 +59,7 @@ function EosUSD() {
     }
   };
 
-  // Material UI
+  // MATERIAL UI
 
   const StyledTableCell = withStyles((theme) => ({
     head: {

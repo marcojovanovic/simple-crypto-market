@@ -12,7 +12,7 @@ vec cele brojeve koje predstavljaju dnevnu razliku
 Sa druge strane polje DAILY_CHANGE_RELATIVE prikazuje % ali nije obuhvaceno zahtevom, 
 no ako je ipak to bio zahtev, mogu tu promenu na projektu da uradim za nekoliko minuta 
 
-(Razlog ove napomene je zbog toga sto je u tabeli na slici polje DAILY_CHANGE prikazuje procentualnu razliku, a u praksi procentualnu razliku prikazuje polje DAILY_CHANGE_RELATIVE )
+(Razlog ove napomene je zbog toga sto je u tabeli na slici u samom projektnom zadatku polje DAILY_CHANGE prikazuje procentualnu razliku, a u praksi procentualnu razliku prikazuje polje DAILY_CHANGE_RELATIVE )
 
 
 ### TEHNOLOGIJE KORIŠĆENE PRILIKOM IZRADE PROJEKTA

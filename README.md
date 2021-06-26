@@ -15,7 +15,7 @@ no ako je ipak to bio zahtev, mogu tu promenu na projektu da uradim za nekoliko 
 (Razlog ove napomene je zbog toga sto je u tabeli na slici polje DAILY_CHANGE prikazuje procentualnu razliku, a u praksi procentualnu razliku prikazuje polje DAILY_CHANGE_RELATIVE )
 
 
-### TEHNOLOGIJE KORICENE PRILIKOM IZRADE PROJEKTA
+### TEHNOLOGIJE KORIŠĆENE PRILIKOM IZRADE PROJEKTA
 
 #### NO CSS
 #### REACT 

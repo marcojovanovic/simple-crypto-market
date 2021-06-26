@@ -15,7 +15,7 @@ no ako je ipak to bio zahtev, mogu tu promenu na projektu da uradim za nekoliko 
 (Razlog ove napomene je zbog toga sto je u tabeli na slici polje DAILY_CHANGE prikazuje procentualnu razliku, a u praksi procentualnu razliku prikazuje polje DAILY_CHANGE_RELATIVE )
 
 
-## TEHNOLOGIJE KORICENE PRILIKOM IZRADE PROJEKTA
+### TEHNOLOGIJE KORICENE PRILIKOM IZRADE PROJEKTA
 
 #### NO CSS
 #### REACT 
@@ -27,6 +27,8 @@ no ako je ipak to bio zahtev, mogu tu promenu na projektu da uradim za nekoliko 
 ## DOKUMENTACIJA 
 
 [BITFINEX API](https://docs.bitfinex.com/docs/ws-general)
+
+
 [BITFINEX TICKER](https://docs.bitfinex.com/reference#ws-public-ticker)
 
 

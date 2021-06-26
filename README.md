@@ -14,7 +14,7 @@ no ako je ipak to bio zahtev, mogu tu promenu na projektu da uradim za nekoliko 
 
 ## Author
 
-- [@marcojovanovic](https://github.com/marcojovanovic/simple-crypto-market)
+- [@marcojovanovic](https://github.com/marcojovanovic)
 
   
 

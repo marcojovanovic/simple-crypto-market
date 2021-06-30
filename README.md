@@ -1,5 +1,4 @@
-
-# "TeleTrader Software GmbH" - TEST PROJECT  
+ 
 
 Jednostavna verzija online marketa, upoznavanje sa dokumentacijom - crytocurrency market
 

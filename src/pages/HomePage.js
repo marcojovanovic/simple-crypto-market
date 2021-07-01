@@ -41,7 +41,7 @@ const useStyles = makeStyles({
 });
 
 function HomePage() {
-  const { login } = React.useContext(CryptoContext);
+  
   const classes = useStyles();
 
   const StyledTableCell = withStyles((theme) => ({
@@ -73,6 +73,7 @@ function HomePage() {
               <EthereumUSD />
               <EhtereumEUR />
               <EosUSD />
+             
             </Table>
           </TableContainer>
         </>

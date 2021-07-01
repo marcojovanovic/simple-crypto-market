@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -8,7 +8,12 @@ import { CryptoContext } from '../context';
 function BitkoinUSD() {
   const { bitkoinUSD, setBitkoinUSD } = React.useContext(CryptoContext);
 
-  // WEBSOCKET CONNECTION
+
+
+  useEffect(()=>{
+
+
+ // WEBSOCKET CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
 
@@ -58,6 +63,11 @@ function BitkoinUSD() {
       }
     }
   };
+
+
+  },[])
+
+ 
 
   // MATERIAL UI
 

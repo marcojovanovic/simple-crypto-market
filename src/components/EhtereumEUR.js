@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -7,7 +7,12 @@ import { CryptoContext } from '../context';
 function EhtereumEUR() {
   const { ethereumEUR, setEthereumEUR } = React.useContext(CryptoContext);
 
-  // OPEN CONNECTION
+
+
+  useEffect(()=>{
+
+
+// OPEN CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
 
@@ -59,6 +64,14 @@ function EhtereumEUR() {
       }
     }
   };
+
+
+
+
+
+  },[])
+
+  
 
   // MATERIAL UI
 

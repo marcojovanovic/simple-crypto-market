@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -7,59 +7,60 @@ import { CryptoContext } from '../context';
 function EthereumUSD() {
   const { ethereumUSD, setEthereumUSD } = React.useContext(CryptoContext);
 
-  // OPEN WEBSOCKET CONNECTION
+  useEffect(() => {
+    // OPEN WEBSOCKET CONNECTION
 
-  const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
+    const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
 
+    // WEBSOCKET SEND MESSAGES
 
-  // WEBSOCKET SEND MESSAGES
-
-  wss.onopen = () => {
-    wss.send(
-      JSON.stringify({
-        event: 'subscribe',
-        channel: 'ticker',
-        symbol: 'tETHUSD',
-        pair: 'tETHUSD',
-      })
-    );
-  };
-
-  // WEBSOCKETS GET MESSAGES AND SETSTATE
-
-  wss.onmessage = (msg) => {
-    let res = JSON.parse(msg.data);
-
-    const inputDetails = {
-      cid: Date.now(),
-      type: 'LIMIT',
-      symbol: 'ETHUSD',
-      amount: '',
-      price: '',
+    wss.onopen = () => {
+      wss.send(
+        JSON.stringify({
+          event: 'subscribe',
+          channel: 'ticker',
+          symbol: 'tETHUSD',
+          pair: 'tETHUSD',
+        })
+      );
     };
 
-    let hb = res[1];
+    // WEBSOCKETS GET MESSAGES AND SETSTATE
 
-    if (hb !== 'hb') {
-      if (res) {
-        let responder = res[1];
-        if (responder) {
-          let dailyChange = Number(responder[4].toFixed(2));
-          let volume = Number(responder[7].toFixed(2));
-          let lastPrice = Number(responder[6].toFixed(2));
+    wss.onmessage = (msg) => {
+      let res = JSON.parse(msg.data);
 
-          //console.log(responder);
+      const inputDetails = {
+        cid: Date.now(),
+        type: 'LIMIT',
+        symbol: 'ETHUSD',
+        amount: '',
+        price: '',
+      };
 
-          setEthereumUSD({
-            dailyChange: dailyChange,
-            volume: volume,
-            lastPrice: lastPrice,
-            symbol: inputDetails.symbol,
-          });
+      let hb = res[1];
+
+      if (hb !== 'hb') {
+        if (res) {
+          let responder = res[1];
+          if (responder) {
+            let dailyChange = Number(responder[4].toFixed(2));
+            let volume = Number(responder[7].toFixed(2));
+            let lastPrice = Number(responder[6].toFixed(2));
+
+            //console.log(responder);
+
+            setEthereumUSD({
+              dailyChange: dailyChange,
+              volume: volume,
+              lastPrice: lastPrice,
+              symbol: inputDetails.symbol,
+            });
+          }
         }
       }
-    }
-  };
+    };
+  }, []);
 
   // Material UI
 

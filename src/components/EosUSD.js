@@ -1,5 +1,5 @@
-import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import React,{useEffect} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { CryptoContext } from '../context';
@@ -7,7 +7,9 @@ import { CryptoContext } from '../context';
 function EosUSD() {
   const { eosUSD, setEosUSD } = React.useContext(CryptoContext);
 
-  // OPEN CONNECTION
+  useEffect(()=>{
+
+// OPEN CONNECTION
 
   const wss = new WebSocket('wss://api-pub.bitfinex.com/ws/2');
 
@@ -58,6 +60,11 @@ function EosUSD() {
       }
     }
   };
+
+
+  },[])
+
+  
 
   // MATERIAL UI
 
